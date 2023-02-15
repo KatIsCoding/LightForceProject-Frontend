@@ -1,0 +1,11 @@
+app-game {
+  display: flex;
+  height: 100%;
+  width: 90%;
+}
+
+.mainView {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
