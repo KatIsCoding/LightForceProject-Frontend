@@ -21,6 +21,15 @@ export class CloudService {
     };
   }
 
+  async uploadScore(score: number) {
+    // Make API Call to store user's score
+  }
+
+  async startGame() {
+    // Make API Call to check if game can be started
+    return true;
+  }
+
   async buyTokens() {
     // Buy tokens for username
     this.userData.tokens++;

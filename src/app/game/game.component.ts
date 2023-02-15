@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { CloudService } from './../cloud.service';
 
 enum PossibleDirections {
   Up = 'ArrowUp',
@@ -20,6 +21,8 @@ export class GameComponent {
   running = false;
   score = 0;
 
+  constructor(private cloudService: CloudService) {}
+
   private setNextDirection() {
     const randomDirection = <keyof typeof PossibleDirections>(
       Object.keys(PossibleDirections)[
@@ -34,7 +37,6 @@ export class GameComponent {
       ] + 'deg';
 
     this.direction = randomDirection;
-
     this.rotationAngle = randomRotationAngle;
   }
 
@@ -46,9 +48,19 @@ export class GameComponent {
     }
   }
 
-  startGame() {
+  async startGame() {
+    const result = await this.cloudService.startGame();
+    if (!result) {
+      // Show the message Not enough credits
+      console.error('Not enough credits');
+      return;
+    }
+    this.score = 0;
     this.running = true;
-    console.log(this.running);
+    setTimeout(() => {
+      this.running = false;
+      this.cloudService.uploadScore(this.score);
+    }, 20000);
   }
 
   @HostListener('window:keyup', ['$event'])
