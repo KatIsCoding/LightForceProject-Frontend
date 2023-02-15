@@ -5,16 +5,24 @@ import { UserData } from './user.data';
   providedIn: 'root',
 })
 export class CloudService {
-  userData: UserData | null = null;
-  loggedIn: boolean = false;
+  userData: UserData = {
+    username: '',
+    tokens: 0,
+  };
+  loggedIn: boolean = true;
   constructor() {}
 
   async login(username: string) {
-    // this.fetch(username)
+    // Get userData
     this.loggedIn = true;
     this.userData = {
       username,
       tokens: 0,
     };
+  }
+
+  async buyTokens() {
+    // Buy tokens for username
+    this.userData.tokens++;
   }
 }
