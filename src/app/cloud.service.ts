@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserData } from './user.data';
+import { HttpClient } from '@angular/common/http';
+import { enviroment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -8,9 +10,14 @@ export class CloudService {
   userData: UserData = {
     username: '',
     tokens: 0,
+    ledge: [],
   };
-  loggedIn: boolean = true;
-  constructor() {}
+  price = 0;
+  loggedIn: boolean = false;
+
+  private baseUrl = enviroment.baseUrl;
+
+  constructor(private http: HttpClient) {}
 
   async login(username: string) {
     // Get userData
@@ -18,7 +25,24 @@ export class CloudService {
     this.userData = {
       username,
       tokens: 0,
+      ledge: [
+        {
+          description: 'Played game',
+          debit: 4,
+          credit: 0,
+        },
+        {
+          description: 'Played game',
+          debit: 4,
+          credit: 0,
+        },
+      ],
     };
+  }
+
+  async getPrices() {
+    // Get Prices from cloud
+    this.price = 9;
   }
 
   async uploadScore(score: number) {
@@ -27,11 +51,12 @@ export class CloudService {
 
   async startGame() {
     // Make API Call to check if game can be started
+    console.log(this.baseUrl);
     return true;
   }
 
-  async buyTokens() {
+  async buyTokens(tokens: number) {
     // Buy tokens for username
-    this.userData.tokens++;
+    this.userData.tokens += tokens;
   }
 }
