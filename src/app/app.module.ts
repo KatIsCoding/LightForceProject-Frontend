@@ -11,10 +11,12 @@ import { MainComponent } from './main/main.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BuytokensComponent } from './buytokens/buytokens.component';
+import { LedgerComponent } from './ledger/ledger.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MainComponent,
     GameComponent,
     BuytokensComponent,
+    LedgerComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
