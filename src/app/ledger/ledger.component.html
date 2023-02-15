@@ -1,1 +1,7 @@
-<p>ledger works!</p>
+<mat-list>
+  <mat-list-item *ngFor="let history of cloudService.userData.ledge">
+    <span matListItemTitle>{{history.description}}</span>
+    <span matListItemLine>Added {{history.credit}} tokens</span>
+    <span matListItemLine>Used {{history.debit}} tokens</span>
+  </mat-list-item>
+</mat-list>
