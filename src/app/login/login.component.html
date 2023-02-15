@@ -1,5 +1,5 @@
 <div>
-  <label for="username">Introduce your username</label>
-  <input type="text" [(ngModel)]="username" id="username" placeholder="Username">
-  <button (click)="setUsername(username)">Login</button>
+  <mat-label for="username">Introduce your username</mat-label>
+  <input matInput type="text" [(ngModel)]="username" id="username" placeholder="Username">
+  <button mat-raised-button color="primary" (click)="setUsername(username)">Login</button>
 </div>
