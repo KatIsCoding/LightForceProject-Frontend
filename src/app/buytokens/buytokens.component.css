@@ -1,0 +1,4 @@
+#tokensDialog {
+  display: flex;
+  flex-direction: column;
+}

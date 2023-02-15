@@ -1,1 +1,6 @@
-<p>buytokens works!</p>
+<h1 mat-dialog-title>Buy tokens</h1>
+<div mat-dialog-content id="tokensDialog">
+  <mat-label>Select How Many Tokens to buy</mat-label>
+  <input matInput type="number" [(ngModel)]="tokens">
+  <button mat-raised-button color="primary" [mat-dialog-close]="tokens">Buy ({{tokens * cloudService.price}}$)</button>
+</div>

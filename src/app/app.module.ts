@@ -10,9 +10,11 @@ import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BuytokensComponent } from './buytokens/buytokens.component';
 
 import { MatButtonModule } from '@angular/material/button';
-import { BuytokensComponent } from './buytokens/buytokens.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { BuytokensComponent } from './buytokens/buytokens.component';
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
