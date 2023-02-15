@@ -17,7 +17,7 @@ const possibleRotationAngles = [45, 135, -45, -135];
 export class GameComponent {
   direction: keyof typeof PossibleDirections = 'Down';
   rotationAngle = '-45deg';
-  running = true;
+  running = false;
   score = 0;
 
   private setNextDirection() {
@@ -41,7 +41,14 @@ export class GameComponent {
   private checkKeyboardInput(event: KeyboardEvent) {
     if (event.code === PossibleDirections[this.direction]) {
       this.score++;
+    } else if (this.score > 0) {
+      this.score--;
     }
+  }
+
+  startGame() {
+    this.running = true;
+    console.log(this.running);
   }
 
   @HostListener('window:keyup', ['$event'])

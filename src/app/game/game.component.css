@@ -19,7 +19,7 @@ main {
   color: white
 }
 
-#direction, #score {
+.text {
   font-size: xx-large;
 }
 
@@ -35,4 +35,8 @@ main {
   padding: 10%;
   transform: rotate(var(--rotationAngle));
   -webkit-transform: rotate(var(--rotationAngle));
+}
+
+#startGameBtn {
+  background-color: green;
 }

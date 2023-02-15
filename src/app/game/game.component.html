@@ -1,8 +1,13 @@
 <main>
   <div id="gameView">
-    <p id="direction">{{direction | uppercase}}</p>
-    <i id="arrow" [style.--rotationAngle]="rotationAngle"></i>
-    <p id="score">Score: {{score}}</p>
+    <ng-container *ngIf="running">
+      <p class="text" id="direction">{{direction | uppercase}}</p>
+      <i id="arrow" [style.--rotationAngle]="rotationAngle"></i>
+      <p class="text" id="score">Score: {{score}}</p>
+    </ng-container>
+    <ng-container *ngIf="!running">
+      <p class="text">Game stopped. Click the button to start</p>
+      <button id="startGameBtn" (click)="startGame()">Start</button>
+    </ng-container>
   </div>
-
 </main>
