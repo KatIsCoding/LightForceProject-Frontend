@@ -1,0 +1,34 @@
+main {
+  background-color: aqua;
+  width: 90%;
+
+}
+
+#gameView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  background-color: black;
+  width: 50%;
+  height: 50%;
+}
+
+#gameView * {
+  color: white
+}
+
+#direction {
+  font-size: xx-large;
+}
+
+#arrow {
+  border: solid white;
+  margin-top: 40px;
+  border-width: 0 12px 12px 0;
+  display: inline-block;
+  padding: 10%;
+  transform: rotate(var(--rotationAngle));
+  -webkit-transform: rotate(var(--rotationAngle));
+}
