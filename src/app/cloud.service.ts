@@ -12,5 +12,9 @@ export class CloudService {
   async login(username: string) {
     // this.fetch(username)
     this.loggedIn = true;
+    this.userData = {
+      username,
+      tokens: 0,
+    };
   }
 }
