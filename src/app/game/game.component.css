@@ -19,8 +19,12 @@ main {
   color: white
 }
 
-#direction {
+#direction, #score {
   font-size: xx-large;
+}
+
+#score {
+  margin-top: 50px;
 }
 
 #arrow {
