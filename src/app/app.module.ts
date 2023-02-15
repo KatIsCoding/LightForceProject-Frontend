@@ -11,9 +11,25 @@ import { MainComponent } from './main/main.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatButtonModule } from '@angular/material/button';
+import { BuytokensComponent } from './buytokens/buytokens.component';
+
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent, MainComponent, GameComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, BrowserAnimationsModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    LoginComponent,
+    MainComponent,
+    GameComponent,
+    BuytokensComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
