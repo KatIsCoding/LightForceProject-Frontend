@@ -8,9 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent, MainComponent],
+  declarations: [AppComponent, HeaderComponent, LoginComponent, MainComponent, GameComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
