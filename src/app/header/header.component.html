@@ -1,1 +1,4 @@
-<p>Hello! {{cloudService.userData?.username}}, you currently have: {{cloudService.userData?.tokens}} tokens</p>
+<header>
+<p id="userInfo">Hello! {{cloudService.userData.username}}, you currently have: {{cloudService.userData.tokens}} tokens</p>
+<button (click)="cloudService.buyTokens()">Buy Tokens</button>
+</header>
