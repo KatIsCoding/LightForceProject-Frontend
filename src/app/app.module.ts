@@ -14,11 +14,14 @@ import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BuytokensComponent } from './buytokens/buytokens.component';
 import { LedgerComponent } from './ledger/ledger.component';
+import { HighscoresComponent } from './highscores/highscores.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
+
+import { NgParticlesModule } from 'ng-particles';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { MatListModule } from '@angular/material/list';
     GameComponent,
     BuytokensComponent,
     LedgerComponent,
+    HighscoresComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +44,7 @@ import { MatListModule } from '@angular/material/list';
     MatFormFieldModule,
     MatListModule,
     HttpClientModule,
+    NgParticlesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
