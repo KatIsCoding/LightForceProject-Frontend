@@ -1,27 +1,40 @@
-# LightforceArcade
+# LightForceArcade
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+LightForceArcade is a coding excercise submission that was part of my job application process for a position at LightForce. The goal was to create a simple fullstack web application that would allow users do multiple actions such as playing a game, buying and using tickets. It features some other features such as a leaderboard and a ledge.
 
-## Development server
+![screenshot](./screenshot.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Try it out
 
-## Code scaffolding
+You can try it out right now at [LightForceArcade](https://katiscoding.github.io/LightForceProject-Frontend/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Built With
 
-## Build
+- Angular
+- Angular Material
+- tsParticles
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Getting started
 
-## Running unit tests
+To get a local copy up and running follow these simple example steps.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Requirements
 
-## Running end-to-end tests
+- Node.js
+- Angular CLI
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### How to run locally
 
-## Further help
+- Clone the repository
+- Run `npm install` in the root directory
+- Run `npm install -g @angular/cli` to install Angular CLI in case you don't have it
+- Run `ng serve --open` to start the application
+> Note: If you are running locally, it means you might as well want to run the backend as well. You can find the backend [here](https://github.com/KatIsCoding/LightForceProject-Backend)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Author
+
+👤 Fabrizio Gomez
+
+- Github: [@KatIsCoding](https://github.com/KatIsCoding)
+- Twitter: [@Fabrizio](https://twitter.com/fabriziogr211)
+
