@@ -1,4 +1,4 @@
 export const enviroment = {
   production: true,
-  baseUrl: 'http://localhost:9001/',
+  baseUrl: 'https://api-gpfo.onrender.com/',
 };
