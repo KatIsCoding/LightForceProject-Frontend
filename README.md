@@ -38,3 +38,11 @@ To get a local copy up and running follow these simple example steps.
 - Github: [@KatIsCoding](https://github.com/KatIsCoding)
 - Twitter: [@Fabrizio](https://twitter.com/fabriziogr211)
 
+## Notes
+
+- The testing suite for this project is not complete. I will be adding more tests in the future.
+
+## Acknowledgments
+
+- Lightforce
+
