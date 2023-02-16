@@ -1,8 +1,8 @@
 header {
-  display: flex;
   justify-content: flex-end;
+  position: absolute;
   align-items: center;
-  background-color: aqua;
+  margin-left: 20px;
 }
 
 #userInfo {
