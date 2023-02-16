@@ -1,0 +1,7 @@
+<h2>Leaderboard</h2>
+<mat-list>
+  <mat-list-item *ngFor="let highscore of cloudService.highscores">
+    <span matListItemTitle>{{highscore[0]}}</span>
+    <span matListItemLine>{{highscore[1]}}</span>
+  </mat-list-item>
+</mat-list>
