@@ -1,7 +1,24 @@
 app-game {
   display: flex;
   height: 100%;
-  width: 90%;
+  width: 70%;
+}
+
+app-highscores {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  width: 20%;
+  border: dotted 5px black;
+  border-right-style: none
+}
+
+app-ledger {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  width: 20%;
+  border: dotted 5px black;
 }
 
 .mainView {
