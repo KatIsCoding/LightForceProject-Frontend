@@ -6,3 +6,8 @@ div {
   justify-content: center;
   align-items: center;
 }
+
+mat-label {
+  color: white;
+}
+

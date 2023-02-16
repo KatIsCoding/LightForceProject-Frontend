@@ -1,10 +1,11 @@
 
+
 <ng-particles
-  id="particles"
     [options]="particlesOptions"
     [particlesInit]="particlesInit"
 >
 </ng-particles>
+
 
 <app-login *ngIf="!cloudService.loggedIn"></app-login>
 <app-main *ngIf="cloudService.loggedIn"></app-main>

@@ -61,7 +61,7 @@ export class GameComponent {
       setTimeout(() => {
         this.running = false;
         this.cloudService.uploadScore(this.score);
-      }, 5000);
+      }, 20000);
     });
   }
 

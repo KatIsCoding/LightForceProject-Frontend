@@ -1,6 +1,6 @@
 <h2>Ledge</h2>
 <mat-list>
-  <mat-list-item *ngFor="let history of cloudService.userData.ledge">
+  <mat-list-item *ngFor="let history of cloudService.userData.ledge.reverse()">
     <span matListItemTitle>{{history.description}}</span>
     <span matListItemLine>Added {{history.credit}} tokens</span>
     <span matListItemLine>Used {{history.debit}} tokens</span>

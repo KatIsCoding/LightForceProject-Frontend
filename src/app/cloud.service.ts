@@ -13,7 +13,7 @@ export class CloudService {
     ledge: [],
   };
   price = 0;
-  loggedIn: boolean = true;
+  loggedIn: boolean = false;
   highscores: [string, number][] = [];
 
   private baseUrl = enviroment.baseUrl;

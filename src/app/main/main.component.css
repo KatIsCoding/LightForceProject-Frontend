@@ -6,19 +6,23 @@ app-game {
 
 app-highscores {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-height: 75vh;
+  overflow: hidden;
   background-color: transparent;
   width: 20%;
-  border: dotted 5px black;
   border-right-style: none
 }
 
 app-ledger {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  max-height: 75vh;
+  overflow: hidden;
   background-color: transparent;
   width: 20%;
-  border: dotted 5px black;
+  flex-direction: column;
 }
 
 .mainView {

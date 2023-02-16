@@ -13,7 +13,9 @@ export class HeaderComponent {
   constructor(public cloudService: CloudService, public dialog: MatDialog) {}
 
   openBuyTokensDialog() {
-    const dialogRef = this.dialog.open(BuytokensComponent);
+    console.log('clicked');
+    const dialogRef = this.dialog.open(BuytokensComponent, {});
+    console.log(dialogRef);
 
     dialogRef.afterClosed().subscribe((tokens) => {
       if (tokens) {

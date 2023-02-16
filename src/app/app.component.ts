@@ -8,6 +8,7 @@ import {
   OutMode,
 } from 'tsparticles-engine';
 import { Engine } from 'tsparticles-engine/types/engine';
+import { loadPolygonPath } from 'tsparticles-path-polygon';
 
 @Component({
   selector: 'app-root',
@@ -16,83 +17,96 @@ import { Engine } from 'tsparticles-engine/types/engine';
 })
 export class AppComponent {
   title = 'LightForce Arcade';
+  id = 'particles';
 
   particlesOptions = {
-    background: {
-      color: {
-        value: '#0d47a1',
-      },
-    },
-    fpsLimit: 120,
-    interactivity: {
-      events: {
-        onClick: {
-          enable: true,
-          mode: ClickMode.push,
-        },
-        onHover: {
-          enable: true,
-          mode: HoverMode.repulse,
-        },
-        resize: true,
-      },
-      modes: {
-        push: {
-          quantity: 4,
-        },
-        repulse: {
-          distance: 200,
-          duration: 0.4,
-        },
-      },
-    },
     particles: {
       color: {
-        value: '#ffffff',
-      },
-      links: {
-        color: '#ffffff',
-        distance: 150,
-        enable: true,
-        opacity: 0.5,
-        width: 1,
-      },
-      collisions: {
-        enable: true,
+        value: '#FF0000',
+        animation: {
+          enable: true,
+          speed: 10,
+        },
       },
       move: {
+        attract: {
+          enable: true,
+          rotate: {
+            distance: 100,
+            x: 2000,
+            y: 2000,
+          },
+        },
         direction: MoveDirection.none,
         enable: true,
         outModes: {
-          default: OutMode.bounce,
+          default: OutMode.destroy,
+        },
+        path: {
+          clamp: false,
+          enable: true,
+          delay: {
+            value: 0,
+          },
+          generator: 'polygonPathGenerator',
+          options: {
+            sides: 6,
+            turnSteps: 30,
+            angle: 30,
+          },
         },
         random: false,
-        speed: 6,
+        speed: 3,
         straight: false,
+        trail: {
+          fillColor: '#000',
+          length: 20,
+          enable: true,
+        },
       },
       number: {
         density: {
           enable: true,
-          area: 800,
         },
-        value: 80,
+        value: 0,
       },
       opacity: {
-        value: 0.5,
+        value: 1,
       },
       shape: {
         type: 'circle',
       },
       size: {
-        value: { min: 1, max: 5 },
+        value: 2,
       },
     },
-    detectRetina: true,
+    background: {
+      color: '#000',
+    },
+    fullScreen: {
+      zIndex: -1,
+    },
+    emitters: {
+      direction: 'none',
+      rate: {
+        quantity: 1,
+        delay: 0.25,
+      },
+      size: {
+        width: 0,
+        height: 0,
+      },
+      position: {
+        x: 50,
+        y: 50,
+      },
+    },
   };
 
   constructor(public cloudService: CloudService) {}
 
   async particlesInit(engine: Engine) {
-    await loadFull(engine);
+    loadPolygonPath(engine);
+    loadFull(engine);
   }
 }
