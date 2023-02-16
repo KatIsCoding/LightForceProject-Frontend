@@ -40,3 +40,8 @@ main {
 #startGameBtn {
   background-color: green;
 }
+
+#instructions {
+  margin-left: 15px;
+  color: white;
+}
