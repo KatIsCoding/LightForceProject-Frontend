@@ -49,18 +49,20 @@ export class GameComponent {
   }
 
   async startGame() {
-    const result = await this.cloudService.startGame();
-    if (!result) {
-      // Show the message Not enough credits
-      console.error('Not enough credits');
-      return;
-    }
-    this.score = 0;
-    this.running = true;
-    setTimeout(() => {
-      this.running = false;
-      this.cloudService.uploadScore(this.score);
-    }, 20000);
+    (await this.cloudService.startGame()).subscribe((response) => {
+      if (!response.playable) {
+        // Show the message Not enough credits
+        console.error('Not enough credits');
+        return;
+      }
+      this.cloudService.updateUserData(response.userData);
+      this.score = 0;
+      this.running = true;
+      setTimeout(() => {
+        this.running = false;
+        this.cloudService.uploadScore(this.score);
+      }, 5000);
+    });
   }
 
   @HostListener('window:keyup', ['$event'])

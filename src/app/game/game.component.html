@@ -8,6 +8,7 @@
     <ng-container *ngIf="!running">
       <p class="text">Game stopped. Click the button to start</p>
       <button mat-stroked-button id="startGameBtn" (click)="startGame()">Start</button>
+      <p class="text" id="score">Last Score: {{score}}</p>
     </ng-container>
   </div>
 </main>

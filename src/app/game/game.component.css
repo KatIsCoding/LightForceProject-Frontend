@@ -1,5 +1,5 @@
 main {
-  background-color: aqua;
+  background-color: transparent;
   width: 100%;
 
 }
@@ -10,7 +10,7 @@ main {
   justify-content: center;
   align-items: center;
   margin-left: 5%;
-  background-color: black;
+  background-color: transparent;
   width: 50%;
   height: 50%;
 }
