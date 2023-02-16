@@ -6,7 +6,7 @@ app-login {
 
 * {
   position: relative;
-  z-index: 9999;
+
 }
 #particles * {
   z-index: -1;
