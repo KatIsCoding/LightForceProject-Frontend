@@ -1,5 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { CloudService } from './../cloud.service';
+import { MatDialog } from '@angular/material/dialog';
+import { BuytokensComponent } from './../buytokens/buytokens.component';
 
 enum PossibleDirections {
   Up = 'ArrowUp',
@@ -21,7 +23,7 @@ export class GameComponent {
   running = false;
   score = 0;
 
-  constructor(private cloudService: CloudService) {}
+  constructor(private cloudService: CloudService, private dialog: MatDialog) {}
 
   private setNextDirection() {
     const randomDirection = <keyof typeof PossibleDirections>(
@@ -49,20 +51,35 @@ export class GameComponent {
   }
 
   async startGame() {
-    (await this.cloudService.startGame()).subscribe((response) => {
-      if (!response.playable) {
-        // Show the message Not enough credits
-        console.error('Not enough credits');
+    (await this.cloudService.startGame()).subscribe(
+      (response) => {
+        if (!response.playable) {
+          // Show the message Not enough credits
+          console.error('Not enough credits');
+          return;
+        }
+        this.cloudService.updateUserData(response.userData);
+        this.score = 0;
+        this.running = true;
+        setTimeout(() => {
+          this.running = false;
+          this.cloudService.uploadScore(this.score);
+        }, 20000);
+      },
+      (err) => {
+        const dialogRef = this.dialog.open(BuytokensComponent, {
+          data: {
+            requireToPlay: true,
+          },
+        });
+        dialogRef.afterClosed().subscribe((tokens) => {
+          if (tokens) {
+            this.cloudService.buyTokens(tokens);
+          }
+        });
         return;
       }
-      this.cloudService.updateUserData(response.userData);
-      this.score = 0;
-      this.running = true;
-      setTimeout(() => {
-        this.running = false;
-        this.cloudService.uploadScore(this.score);
-      }, 20000);
-    });
+    );
   }
 
   @HostListener('window:keyup', ['$event'])

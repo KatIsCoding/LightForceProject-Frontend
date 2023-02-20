@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CloudService } from './../cloud.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class BuytokensComponent {
   tokens: number = 0;
   constructor(
     public dialogRef: MatDialogRef<BuytokensComponent>,
-    public cloudService: CloudService
+    public cloudService: CloudService,
+    @Inject(MAT_DIALOG_DATA) public data: { requireToPlay: boolean }
   ) {}
 }

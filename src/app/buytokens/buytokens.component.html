@@ -1,6 +1,10 @@
 <h1 mat-dialog-title>Buy tokens</h1>
 <div mat-dialog-content id="tokensDialog">
-  <mat-label>Select How Many Tokens to buy</mat-label>
+  <mat-label *ngIf="data.requireToPlay else normalPurchase;">Not Enough Tokens, please buy tokens in order to be able to play</mat-label>
   <input matInput type="number" min="1" [(ngModel)]="tokens">
   <button mat-raised-button color="primary" [mat-dialog-close]="tokens">Buy ({{tokens * cloudService.price}}$)</button>
 </div>
+
+<ng-template #normalPurchase>
+  <mat-label>Select How Many Tokens to buy</mat-label>
+</ng-template>

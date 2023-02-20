@@ -14,7 +14,11 @@ export class HeaderComponent {
 
   openBuyTokensDialog() {
     console.log('clicked');
-    const dialogRef = this.dialog.open(BuytokensComponent, {});
+    const dialogRef = this.dialog.open(BuytokensComponent, {
+      data: {
+        requireToPlay: false,
+      },
+    });
     console.log(dialogRef);
 
     dialogRef.afterClosed().subscribe((tokens) => {
